@@ -47,8 +47,12 @@ class HTMLTemplateMaker {
 
         fs.mkdirSync(path.dirname(htmlPath), { recursive: true });
         fs.writeFileSync(htmlPath, htmlContent);
-        fs.writeFileSync(cssPath, '');
-        fs.writeFileSync(jsPath, '');
+        fs.writeFileSync(cssPath, `* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}`);
+        fs.writeFileSync(jsPath, 'console.log("Hello, World!");');
     }
 }
 
