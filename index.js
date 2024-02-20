@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 class HTMLTemplateMaker {
     constructor() {
@@ -44,10 +45,33 @@ class HTMLTemplateMaker {
     generateFiles(htmlPath, cssPath, jsPath) {
         const htmlContent = this.generateTemplate();
 
+        fs.mkdirSync(path.dirname(htmlPath), { recursive: true });
         fs.writeFileSync(htmlPath, htmlContent);
         fs.writeFileSync(cssPath, '');
         fs.writeFileSync(jsPath, '');
     }
+}
+
+const args = process.argv.slice(2);
+
+if (args.length < 3) {
+    console.log('Usage: node index.js <title> <file_name_css> <file_name_js>');
+} else {
+    const templateMaker = new HTMLTemplateMaker();
+    const title = args[0];
+    const cssFilename = args[1];
+    const jsFilename = args[2];
+
+    templateMaker.setTitle(title);
+    templateMaker.addStylesheet(cssFilename);
+    templateMaker.addScript(jsFilename);
+
+    const dist = path.join(__dirname, 'dist');
+    const htmlPath = path.join(dist, 'index.html');
+    const cssPath = path.join(dist, `${cssFilename}.css`);
+    const jsPath = path.join(dist, `${jsFilename}.js`);
+
+    templateMaker.generateFiles(htmlPath, cssPath, jsPath);
 }
 
 module.exports = HTMLTemplateMaker;
