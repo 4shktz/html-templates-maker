@@ -13,11 +13,11 @@ class HTMLTemplateMaker {
     }
 
     addStylesheet(stylesheetPath) {
-        this.stylesheets.push(`<link rel="stylesheet" href="${stylesheetPath}">`);
+        this.stylesheets.push(`<link rel="stylesheet" href="${stylesheetPath}.css">`);
     }
 
     addScript(scriptPath) {
-        this.scripts.push(`<script src="${scriptPath}"></script>`);
+        this.scripts.push(`<script src="${scriptPath}.js"></script>`);
     }
 
     addContent(content) {
@@ -28,8 +28,7 @@ class HTMLTemplateMaker {
         const stylesheetTags = this.stylesheets.join('\n');
         const scriptTags = this.scripts.join('\n');
 
-        return `
-<!DOCTYPE html>
+        return `<!DOCTYPE html>
 <html>
 <head>
     ${this.head}
@@ -39,8 +38,7 @@ class HTMLTemplateMaker {
     ${this.body}
     ${scriptTags}
 </body>
-</html>
-    `;
+</html>`;
     }
 
     generateFiles(htmlPath, cssPath, jsPath) {
