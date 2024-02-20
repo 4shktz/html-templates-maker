@@ -1,5 +1,5 @@
 {
-  "name": "html-templates-maker",
+  "name": "html-builder",
   "version": "1.0.0",
   "description": "A very simple library that makes an html website template, you can also include other libraries in it.",
   "main": "index.js",
@@ -7,5 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "4shktz",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/4shktz/html-templates-maker.git"
+  }
 }
