@@ -45,8 +45,8 @@ class HTMLTemplateMaker {
         const htmlContent = this.generateTemplate();
 
         fs.writeFileSync(htmlPath, htmlContent);
-        fs.writeFileSync(cssPath, this.stylesheets.join('\n'));
-        fs.writeFileSync(jsPath, this.scripts.join('\n'));
+        fs.writeFileSync(cssPath, '');
+        fs.writeFileSync(jsPath, '');
     }
 }
 
