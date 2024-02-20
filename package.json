@@ -1,5 +1,5 @@
 {
-  "name": "html-builder",
+  "name": "html-template-maker",
   "version": "1.0.0",
   "description": "A very simple library that makes an html website template, you can also include other libraries in it.",
   "main": "index.js",

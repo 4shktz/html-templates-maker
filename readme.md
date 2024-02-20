@@ -1,10 +1,10 @@
 # Introduction
 
-The HTMLTemplateMaker (HTML Builder) module is designed to generate HTML, CSS and JavaScript files from a customized template. Here's how to use this module:
+The HTMLTemplateMaker module is designed to generate HTML, CSS and JavaScript files from a customized template. Here's how to use this module:
 
 # Installation 
 
-`npm install html-builder`
+`npm install html-template-maker`
 
 ## Code example
 
