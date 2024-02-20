@@ -12,4 +12,13 @@ template.addScript(process.argv[process.argv.length - 1]);
 
 template.addContent('<h1>Hello, World!</h1>');
 
-template.generateFiles('index.html', 'styles.css', 'script.js');
+const title = process.argv[2];
+const cssFilename = process.argv[3];
+const jsFilename = process.argv[4];
+
+const dist = 'dist'; 
+const htmlPath = `${dist}/index.html`;
+const cssPath = `${dist}/${cssFilename}.css`;
+const jsPath = `${dist}/${jsFilename}.js`;
+
+template.generateFiles(htmlPath, cssPath, jsPath);
